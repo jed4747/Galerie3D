@@ -1,40 +1,62 @@
+
 body {
-  background: #111;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  overflow: hidden;
 }
 
-.carousel {
+.circle-carousel {
   position: relative;
   width: 300px;
-  height: 400px;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+  height: 300px;
   animation: rotate 20s linear infinite;
-  margin: auto;
 }
-.carousel-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 2px solid #fff;
-    box-shadow: 0 0 10px #000;
-    transform-origin: center center -500px;
-  }
 
-.carousel-img:nth-child(1) { transform: rotateY(0deg) translateZ(500px);} 
-.carousel-img:nth-child(2) { transform: rotateY(72deg) translateZ(500px); }
-.carousel-img:nth-child(3) { transform: rotateY(144deg) translateZ(500px); }
-.carousel-img:nth-child(4) { transform: rotateY(216deg) translateZ(500px); }
-.carousel-img:nth-child(5) { transform: rotateY(288deg) translateZ(500px); }
+.circle-carousel img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px #fff;
+}
+.circle-carousel img:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.circle-carousel img:nth-child(2) {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.circle-carousel img:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.circle-carousel img:nth-child(4) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.circle-carousel img:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @keyframes rotate {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
+
 
